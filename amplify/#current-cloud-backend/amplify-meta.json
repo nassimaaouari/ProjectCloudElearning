@@ -1,0 +1,155 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-projectcloud-dev-279ee-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423466838:role/amplify-projectcloud-dev-279ee-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423466838:role/amplify-projectcloud-dev-279ee-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-projectcloud-dev-279ee-deployment",
+      "UnauthRoleName": "amplify-projectcloud-dev-279ee-unauthRole",
+      "StackName": "amplify-projectcloud-dev-279ee",
+      "StackId": "arn:aws:cloudformation:eu-north-1:637423466838:stack/amplify-projectcloud-dev-279ee/087061f0-b22d-11ef-b603-0e0905341d69",
+      "AmplifyAppId": "d3r4wnfvtw6kku"
+    }
+  },
+  "function": {
+    "projectcloudc8a38d14": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-12-04T10:59:52.988Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-12-04T10:59:53.130Z",
+      "distZipFilename": "projectcloudc8a38d14-74383039584b31306f51-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-projectcloud-dev-279ee-deployment",
+        "s3Key": "amplify-builds/projectcloudc8a38d14-74383039584b31306f51-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-projectcloud-dev-279ee-deployment/amplify-cfn-templates/function/projectcloudc8a38d14-cloudformation-template.json",
+        "logicalId": "functionprojectcloudc8a38d14"
+      },
+      "lastPushTimeStamp": "2024-12-04T15:29:54.270Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::637423466838:role/projectcloudLambdaRole5f61d431-dev",
+        "Region": "eu-north-1",
+        "Arn": "arn:aws:lambda:eu-north-1:637423466838:function:projectcloudc8a38d14-dev",
+        "Name": "projectcloudc8a38d14-dev",
+        "LambdaExecutionRole": "projectcloudLambdaRole5f61d431-dev"
+      },
+      "lastPushDirHash": "FAy9RkHfQPx77bLfnHpw8xuI8oQ="
+    }
+  },
+  "api": {
+    "apibf2ecae3": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "projectcloudc8a38d14",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-projectcloud-dev-279ee-deployment/amplify-cfn-templates/api/apibf2ecae3-cloudformation-template.json",
+        "logicalId": "apiapibf2ecae3"
+      },
+      "lastPushTimeStamp": "2024-12-04T15:29:54.282Z",
+      "output": {
+        "ApiName": "apibf2ecae3",
+        "RootUrl": "https://okfuwyzo4b.execute-api.eu-north-1.amazonaws.com/dev",
+        "ApiId": "okfuwyzo4b"
+      },
+      "lastPushDirHash": "P1wysSMV8WIH1lSZkimVx6u5poU="
+    },
+    "projectcloud": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "k2avezv5o5f3pdvcdxuiiq65tm",
+        "GraphQLAPIEndpointOutput": "https://scdeiz4rwzcgta4elelukcxpcm.appsync-api.eu-north-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-sy3mb2a7trczjihpsojwvlippq"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-projectcloud-dev-279ee-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiprojectcloud"
+      },
+      "lastPushTimeStamp": "2024-12-04T15:29:59.299Z",
+      "lastPushDirHash": "eOsau4wch7ALxD45M6xqfqiHUtU="
+    }
+  },
+  "auth": {
+    "projectcloud467eba97": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-projectcloud-dev-279ee-deployment/amplify-cfn-templates/auth/projectcloud467eba97-cloudformation-template.json",
+        "logicalId": "authprojectcloud467eba97"
+      },
+      "lastPushTimeStamp": "2024-12-04T15:29:54.490Z",
+      "output": {
+        "UserPoolId": "eu-north-1_yu7XH7r5w",
+        "AppClientIDWeb": "13qrggo5u31n7cv8elecg7haml",
+        "AppClientID": "khb1g9lu1ol94dmf8gdl6u34",
+        "IdentityPoolId": "eu-north-1:66953b1f-88e4-4cd9-9db6-83d1ffae3a7a",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-north-1:637423466838:userpool/eu-north-1_yu7XH7r5w",
+        "IdentityPoolName": "projectcloud467eba97_identitypool_467eba97__dev",
+        "UserPoolName": "projectcloud467eba97_userpool_467eba97"
+      },
+      "lastPushDirHash": "m2yE6cA1Rd0c0ydEmWUoAONe38U="
+    }
+  },
+  "storage": {
+    "contractstorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2024-12-04T15:29:54.526Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-projectcloud-dev-279ee-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagecontractstorage"
+      },
+      "output": {
+        "BucketName": "contractstorage279ee-dev",
+        "Region": "eu-north-1"
+      },
+      "lastPushDirHash": "r4GM634lqicsn2pJQBd2eIlV74U="
+    }
+  }
+}
